@@ -29,10 +29,12 @@ class Conta:
         self.sacar(valor)
         destino.depositar(valor)
 
-    def get_saldo(self):
+    @property
+    def saldo(self):
         return self.__saldo
 
-    def get_titular(self):
+    @property
+    def titular(self):
         return self.__titular
 
     @property
@@ -43,3 +45,6 @@ class Conta:
     def limite(self, limite):
         self.__limite = limite
 
+    @staticmethod
+    def codigo_bancos():
+        return {'BB':'001', 'Caixa':'104', 'Bradesco':'237'}
